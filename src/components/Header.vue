@@ -1,5 +1,7 @@
 <template>
-  <div class="container"></div>
+  <div class="container">
+    <img src="../assets/netflics.png" alt="" />
+  </div>
 </template>
 
 <script>
@@ -10,8 +12,10 @@ export default {
 
 <style>
 .container {
-  height: 60px;
+  height: 100px;
   width: 100%;
-  background-color: crimson;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
 }
 </style>
