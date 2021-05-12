@@ -1,14 +1,15 @@
 <template>
   <div class="container">
     <img src="../assets/netflics.png" alt="" />
-    <input
-      type="text"
-      id=""
-      palceholder="Cosa vuoi guardare..."
-      name=""
-      v-model.trim="ricercaTesto"
-    />
-    <button class="btn" @click="$emit('ricerca testo', ricercaTesto)">✓</button>
+    <div>
+      <input
+        type="text"
+        placeholder="Cosa vuoi guardare?"
+        v-model.trim="ricercaTesto"
+      />
+
+      <button @click="$emit('ricerca', ricercaTesto)">Cerca</button>
+    </div>
   </div>
 </template>
 
@@ -32,9 +33,10 @@ export default {
   width: 100%;
   background-color: rgb(0, 0, 0);
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .btn {
-  padding: 8px;
+  margin-right: 10px;
 }
 </style>

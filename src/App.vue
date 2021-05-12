@@ -2,7 +2,7 @@
   <div id="app">
     <!--Header-->
     <header>
-      <Header @searchingText="updateSearch" />
+      <Header @ricerca="getSearch" />
     </header>
     <!--Main-->
     <main>
@@ -23,54 +23,35 @@ export default {
   },
   data() {
     return {
+      apiURL: "https://api.themoviedb.org/3/search/",
+      apiKey: "9df4bf10e65cc42712e864ea9c9db428",
       listaFilm: [],
-      listaSerieTv: [],
-      apiUrlfilm: "https://api.themoviedb.org/3/search/movie",
-      apiUrltv: "https://api.themoviedb.org/3/search/tv",
+      listaSerie: [],
     };
   },
   methods: {
-    updateSearch(text) {
-      if (text.length > 0) {
+    getSearch(ricerca) {
+      console.log(ricerca);
+      if (ricerca !== "") {
         axios
-          .get(this.apiUrlfilm, {
+          .get(this.apiURL + "movie", {
             params: {
-              api_key: "9df4bf10e65cc42712e864ea9c9db428",
-              query: text,
+              api_key: this.apiKey,
+              query: ricerca,
+              lenguage: "it-IT",
             },
           })
           .then((res) => {
-            this.movieList = res.data.results;
-            console.log(this.listaFilm);
-          })
-          .catch((err) => {
-            console.log("Error", err);
+            this.listaFilm = res.data.results;
           });
-      } else {
-        alert("Inserisci una lettere per iniziare la ricerca");
-      }
-      if (text.length > 0) {
-        axios
-          .get(this.apiUrltv, {
-            params: {
-              api_key: "9df4bf10e65cc42712e864ea9c9db428",
-              query: text,
-            },
-          })
-          .then((result) => {
-            this.seriesList = result.data.results;
-            console.log(this.movieList);
-          })
-          .catch((error) => {
-            console.log("Error", error);
-          });
-      } else {
-        alert("Inserisci una lettere per iniziare la ricerca");
       }
     },
   },
 };
 </script>
+
+
+
 
 <style >
 * {
