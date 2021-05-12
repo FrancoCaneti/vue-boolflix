@@ -1,13 +1,12 @@
 <template>
   <div id="app">
     <!--Header-->
-    <header>
-      <Header @ricerca="getSearch" />
-    </header>
+
+    <Header @ricerca="getSearch" />
+
     <!--Main-->
-    <main>
-      <Bacheca :films="listaFilm" />
-    </main>
+
+    <Bacheca :films="listaFilm" :series="listaSerie" />
   </div>
 </template>
 
@@ -15,6 +14,7 @@
 import axios from "axios";
 import Header from "@/components/Header.vue";
 import Bacheca from "@/components/Bacheca.vue";
+
 export default {
   name: "App",
   components: {
@@ -33,16 +33,26 @@ export default {
     getSearch(ricerca) {
       console.log(ricerca);
       if (ricerca !== "") {
+        const apiParams = {
+          api_key: this.apiKey,
+          query: ricerca,
+          language: "it-IT",
+        };
+        /*film*/
         axios
           .get(this.apiURL + "movie", {
-            params: {
-              api_key: this.apiKey,
-              query: ricerca,
-              lenguage: "it-IT",
-            },
+            params: apiParams,
           })
           .then((res) => {
             this.listaFilm = res.data.results;
+          });
+        /*serie*/
+        axios
+          .get(this.apiURL + "tv", {
+            params: apiParams,
+          })
+          .then((res) => {
+            this.listaSerie = res.data.results;
           });
       }
     },
