@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <img src="../assets/netflics.png" alt="" />
+    <div></div>
     <div>
       <input
         class="search"
@@ -34,11 +35,12 @@ export default {
 .container {
   height: 100px;
   width: 100%;
-  background-color: #000;
+  background-color: rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .btn {
   margin-right: 20px;
   background-color: transparent;
@@ -50,5 +52,8 @@ export default {
   border-radius: 5%;
   padding: 2px;
   color: white;
+}
+.top-bar {
+  color: red;
 }
 </style>
