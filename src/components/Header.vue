@@ -10,7 +10,7 @@
       />
 
       <button class="btn" @click="$emit('ricerca', ricercaTesto)">
-        <i class="fas fa-search">Q</i>
+        <i class="fas fa-search"></i>
       </button>
     </div>
   </div>
