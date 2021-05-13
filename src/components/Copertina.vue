@@ -6,14 +6,15 @@
       :src="`https://image.tmdb.org/t/p/w342${details.poster_path}`"
       alt=""
     />
-    <img class="not poster" v-else src="../assets/notfound.jpg" alt="" />
-    <div class="">
+    <img class="not" v-else src="../assets/notfound.jpg" alt="" />
+    <div>
       <ul>
-        <li>
-          {{ details.title ? details.title : details.name }}
-        </li>
+        <li>{{ details.title ? details.title : details.name }}</li>
         <li>
           {{ details.original_title ? details.original_title : details.name }}
+        </li>
+        <li>
+          {{ details.release_date ? details.release_date : details.name }}
         </li>
         <li>
           <img
@@ -50,7 +51,7 @@ export default {
   },
   data() {
     return {
-      bandiere: ["it", "en"],
+      bandiere: ["it", "en", "ja", "fr"],
     };
   },
   methods: {
@@ -75,17 +76,16 @@ export default {
 }
 ul li {
   list-style: none;
-  display: inline-block;
-
-  width: 150px;
-  height: 60px;
+  width: 340px;
+  height: 50px;
   background-color: rgb(248, 248, 248);
 }
-ul {
-  border: 1px solid black;
-}
 .not {
-  height: 220px;
-  width: 180px;
+  border-radius: 10px;
+  height: 440px;
+  width: 335px;
+}
+.poster {
+  border-radius: 10px;
 }
 </style>
