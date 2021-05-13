@@ -1,14 +1,17 @@
 <template>
   <div class="cards">
     <img
+      class="poster"
       v-if="details.poster_path"
-      :src="`https://image.tmdb.org/t/p/w185${details.poster_path}`"
+      :src="`https://image.tmdb.org/t/p/w342${details.poster_path}`"
       alt=""
     />
-    <img class="not" v-else src="../assets/notfound.jpg" alt="" />
-    <div>
+    <img class="not poster" v-else src="../assets/notfound.jpg" alt="" />
+    <div class="">
       <ul>
-        <li>{{ details.title ? details.title : details.name }}</li>
+        <li>
+          {{ details.title ? details.title : details.name }}
+        </li>
         <li>
           {{ details.original_title ? details.original_title : details.name }}
         </li>
@@ -73,15 +76,16 @@ export default {
 ul li {
   list-style: none;
   display: inline-block;
-  padding: 10px;
+
   width: 150px;
-  background-color: #ffffff;
+  height: 60px;
+  background-color: rgb(248, 248, 248);
 }
 ul {
   border: 1px solid black;
 }
 .not {
-  height: 50px;
-  width: 100px;
+  height: 220px;
+  width: 180px;
 }
 </style>

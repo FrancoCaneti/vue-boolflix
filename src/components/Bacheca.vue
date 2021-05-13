@@ -34,7 +34,7 @@ export default {
 .container-f {
   background-color: #111;
   overflow-x: auto;
-  height: 400px;
+  height: 620px;
 }
 
 ::-webkit-scrollbar {
@@ -69,7 +69,7 @@ export default {
 }
 .film {
   display: flex;
-
+  overflow-x: auto;
   flex-direction: row;
 }
 
