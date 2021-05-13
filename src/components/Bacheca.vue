@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 .container-f {
   background-color: #111;
   overflow-x: auto;

@@ -1,7 +1,11 @@
 <template>
   <div class="container">
     <img src="../assets/netflics.png" alt="" />
-    <div></div>
+    <div class="list">Home</div>
+    <div class="list">Serie Tv</div>
+    <div class="list">Film</div>
+    <div class="list">Nuovi e Popolari</div>
+    <div class="list">La mia Lista</div>
     <div>
       <input
         class="search"
@@ -31,13 +35,13 @@ export default {
 
 
 
-<style>
+<style scoped>
 .container {
   height: 100px;
   width: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(2, 2, 2);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -52,8 +56,17 @@ export default {
   border-radius: 5%;
   padding: 2px;
   color: white;
+  margin-left: 550px;
 }
 .top-bar {
   color: red;
+}
+.list {
+  margin: 0 10px;
+  color: #635f5f;
+}
+.list:hover {
+  color: white;
+  transform: scale(1.2);
 }
 </style>
