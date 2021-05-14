@@ -18,6 +18,15 @@
         <i class="fas fa-search"></i>
       </button>
     </div>
+    <div>
+      <i class="fas fa-gift icon icons"></i>
+    </div>
+    <div>
+      <i class="fas fa-bell icon icons"></i>
+    </div>
+    <div>
+      <img class="panda" src="../assets/panda.jpg" alt="" />
+    </div>
   </div>
 </template>
 
@@ -56,7 +65,7 @@ export default {
   border-radius: 5%;
   padding: 2px;
   color: white;
-  margin-left: 550px;
+  margin-left: 450px;
 }
 .top-bar {
   color: red;
@@ -68,5 +77,18 @@ export default {
 .list:hover {
   color: white;
   transform: scale(1.2);
+}
+.panda {
+  height: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.icon {
+  color: #635f5f;
+  margin: 0 10px;
+}
+.icons:hover {
+  transform: scale(2);
+  color: white;
 }
 </style>

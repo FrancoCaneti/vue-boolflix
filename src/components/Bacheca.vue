@@ -34,7 +34,7 @@ export default {
 .container-f {
   background-color: #111;
   overflow-x: auto;
-  height: 600px;
+  height: 625px;
 }
 
 ::-webkit-scrollbar {
@@ -75,6 +75,6 @@ export default {
 
 h2 {
   margin: 10px;
-  color: #635f5f;
+  color: #7c7575;
 }
 </style>
